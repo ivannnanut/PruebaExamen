@@ -41,10 +41,11 @@ namespace ExamenPrueba.Models
             alumno.Nota = nota;
         }
 
-        
-        public void Saludar()
+        override
+        public void Saludar(string hola)
         {
-            Console.WriteLine("Holita alumnitos");
+            hola = "Holita alumnitos";
+            Console.WriteLine(hola);
         }
           
     }

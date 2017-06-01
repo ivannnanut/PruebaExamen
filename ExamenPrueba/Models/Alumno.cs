@@ -17,6 +17,12 @@ namespace ExamenPrueba.Models
             Nota = nota;
         }
 
+        public Alumno(string nombre, string apellidos, int edad, string nmatricula) : base(nombre, apellidos, edad)
+        {
+            nMatricula = nmatricula;
+            Nota =0;
+        }
+
         public float Nota
         {
             get { return _nota; }
@@ -43,5 +49,10 @@ namespace ExamenPrueba.Models
             Console.WriteLine(queja);
         }
 
+        
+        public override string ToString()
+        {
+            return String.Format("{0}, {1}, {2} ", Nombre, Apellidos,Nota);
+        } 
     }
 }
