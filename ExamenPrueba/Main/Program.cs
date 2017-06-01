@@ -24,10 +24,12 @@ namespace ExamenPrueba
                 Console.WriteLine(e);
             }
 
+            Console.WriteLine(myClase.profe);
             foreach (var a in myClase.alumnos)
             {
                 Console.WriteLine(a);
             }
+            Console.WriteLine("La nota media de la clase es "+ myClase.CalcularMedia()) ;
 
             Console.ReadLine();
 
@@ -38,6 +40,7 @@ namespace ExamenPrueba
 
             lista.Add(new Alumno("Ivansito", "Carrillito", 20, "eeadd3445"));
             lista.Add(new Alumno("JUANVMILLX", "Pedrosa", 26, "eadad34562"));
+            lista.Add(new Alumno("Albatross","Enano",20,"esasdasd242354"));
             return lista;
         }
 

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ExamenPrueba.Models
 {
-    class Profesor : Persona,IEvaluable
+    class Profesor : Persona, IEvaluable
     {
         private float _sueldo;
 
-        public Profesor(string nombre,string apellidos,int edad,float sueldo) : base( nombre,  apellidos, edad)
+        public Profesor(string nombre, string apellidos, int edad, float sueldo) : base(nombre, apellidos, edad)
         {
             Sueldo = sueldo;
         }
@@ -21,32 +21,38 @@ namespace ExamenPrueba.Models
             get { return _sueldo; }
             set
             {
-                if(value<600 || value > 4000)
+                if (value < 600 || value > 4000)
                 {
                     throw new Exception("[ERROR] ¿Seguro que gana eso?");
                 }
                 _sueldo = value;
             }
-        } 
+        }
 
         public void Regañar(string regaño)
         {
-            regaño = "Vete a tu casa y piensalo";
+            Console.WriteLine("Vete a tu casa y piensalo " + regaño);
         }
 
 
 
-        public void Evaluar(Alumno alumno,float nota)
+        public void Evaluar(Alumno alumno, float nota)
         {
             alumno.Nota = nota;
         }
 
-        override
-        public void Saludar(string hola)
+
+        public override void Saludar(string hola)
         {
-            hola = "Holita alumnitos";
-            Console.WriteLine(hola);
+
+            Console.WriteLine("Holita " + hola);
         }
-          
+
+        public override string ToString()
+        {
+            string frase = ("[PROFESOR] " + Nombre + " " + Apellidos);
+            return String.Format(frase + "\n" + "".PadRight(frase.Length, '-'));
+        }
+
     }
 }

@@ -13,8 +13,8 @@ namespace ExamenPrueba.Models
 
         public float CalcularMedia()
         {
-            float nota;
-           return  nota = alumnos.Average(x => x.Nota);
+            
+           return alumnos.Average(x => x.Nota);
         }
 
         public void EvaluarTodos()
@@ -35,6 +35,7 @@ namespace ExamenPrueba.Models
         {
             Console.WriteLine("Introduce la nota del alumno " + a.Nombre+" " + a.Apellidos);
             var notaStr = Console.ReadLine();
+            Console.WriteLine("");
             var nota = 0f;
             float.TryParse(notaStr, out nota);
             return nota;

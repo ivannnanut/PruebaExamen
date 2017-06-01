@@ -39,20 +39,20 @@ namespace ExamenPrueba.Models
         override
         public void Saludar(string hola)
         {
-            hola = "Holita vecinito";
-            Console.WriteLine(hola);
+            
+            Console.WriteLine("Holita vecinito "+ hola);
         }
 
         public void Quejarse(string queja)
         {
-            queja = "Enga ya profe";
-            Console.WriteLine(queja);
+            
+            Console.WriteLine("Enga ya profe "+queja);
         }
 
         
         public override string ToString()
         {
-            return String.Format("{0}, {1}, {2} ", Nombre, Apellidos,Nota);
+            return String.Format("[ALUMNO] {0}, {1}, {2} ", Nombre, Apellidos,Nota+"\n");
         } 
     }
 }
